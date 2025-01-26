@@ -12,7 +12,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000', 'https://your-frontend-domain.vercel.app'],
   methods: ['GET', 'POST', 'PATCH'],
   credentials: true
 }));
@@ -24,12 +24,20 @@ connectDB();
 
 // Routes
 app.use('/api/consultation', consultationRoutes);
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
 
 // Error handling
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Сервер запущен на порту ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+export default app;
