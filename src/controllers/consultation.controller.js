@@ -1,5 +1,4 @@
 import { ConsultationService } from '../services/consultation.service.js';
-import {Consultation} from "../models/consultation.model.js";
 import axios from "axios";
 
 export class ConsultationController {
