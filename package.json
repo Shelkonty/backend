@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Prime X Studio Backend",
+  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -10,19 +10,14 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.1.1",
-    "@types/react-router-dom": "^5.3.3",
     "axios": "^1.7.9",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4.21.2",
+    "express": "^4.18.2",
     "express-validator": "^7.2.1",
-    "framer-motion": "^11.17.0",
     "mongoose": "^8.9.5",
-    "nodemailer": "^6.9.16",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.1"
+    "nodemailer": "^6.9.16"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
