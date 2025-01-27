@@ -16,9 +16,12 @@ app.use(morgan("common"));
 
 // Middleware
 app.use(cors({
-  origin: ['https://outsource-website.vercel.app/'],
-  methods: ['GET', 'POST', 'PATCH'],
-  credentials: true
+  origin: [
+    'https://outsource-website-oh29dinpo-shelkonty-e4379af9.vercel.app/'
+  ],
+  methods: ['GET', 'POST', 'PATCH', 'OPTIONS'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
 }));
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(bodyParser.json());
