@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.js",
+      "src": "src/index.js",
       "use": "@vercel/node"
     }
   ],
@@ -10,7 +10,13 @@
     {
       "src": "/(.*)",
       "dest": "src/index.js",
-      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+      "methods": ["GET", "POST", "OPTIONS", "PATCH"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://outsource-website-37rni49a9-shelkonty-e4379af9.vercel.app",
+        "Access-Control-Allow-Methods": "GET,POST,OPTIONS,PATCH",
+        "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+        "Access-Control-Allow-Credentials": "true"
+      }
     }
   ]
 }
