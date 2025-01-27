@@ -5,17 +5,22 @@ import dotenv from 'dotenv';
 import consultationRoutes from './src/routes/consultation.routes.js';
 import { errorHandler } from './src/middle-ware/error.middleware.js';
 import { connectDB } from './src/config/db.config.js';
+import helmet from "helmet";
+import morgan from "morgan";
 
 dotenv.config();
 
 const app = express();
+app.use(helmet());
+app.use(morgan("common"));
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://your-frontend-domain.vercel.app'],
+  origin: ['https://outsource-website.vercel.app/'],
   methods: ['GET', 'POST', 'PATCH'],
   credentials: true
 }));
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
