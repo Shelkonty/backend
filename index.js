@@ -13,12 +13,15 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: [
-    'https://outsource-website.vercel.app/'
+    'http://localhost:3000',
+    'https://outsource-website.vercel.app'
   ],
   methods: ['GET', 'POST', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+  credentials: true
 }));
-app.options('*', cors());
+
+// Парсинг данных
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -34,10 +37,9 @@ app.get('/health', (req, res) => {
 // Error handling
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
