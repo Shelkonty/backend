@@ -13,7 +13,7 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: [
-    'https://outsource-website-irbkujyft-shelkonty-e4379af9.vercel.app/'
+    'https://outsource-website.vercel.app/'
   ],
   methods: ['GET', 'POST', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept']

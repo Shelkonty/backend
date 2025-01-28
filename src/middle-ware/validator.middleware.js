@@ -4,7 +4,7 @@ export const validateConsultation = [
     body('name').trim().notEmpty().withMessage('Name is required'),
     body('phone').trim().notEmpty().withMessage('Phone is required'),
     body('email').trim().isEmail().withMessage('Valid email required'),
-    body('siteType').trim().notEmpty().withMessage('Site type is required'), // Changed from service
+    body('siteType').trim().notEmpty().withMessage('Site type is required'),
     body('details').trim().notEmpty().withMessage('Details are required'),
 ];
 
