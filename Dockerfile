@@ -1,4 +1,14 @@
-FROM ubuntu:latest
-LABEL authors="hdfgh"
+FROM node:18-alpine
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+# Копируем исходный код
+COPY . .
+
+EXPOSE 5000
+
+CMD ["npm", "start"]

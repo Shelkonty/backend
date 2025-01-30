@@ -13,6 +13,7 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: [
+    'https://saryarka-solutions.kz',
     'http://localhost:3000',
     'https://outsource-website.vercel.app'
   ],

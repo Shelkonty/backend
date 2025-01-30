@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb+srv://shelkonty:Batyr2004@cluster0.74zcx1s.mongodb.net/tech?retryWrites=true&w=majority&appName=Cluster0
+      - PORT=5000
+      - NODE_ENV=production
+    restart: always
+
+networks:
+  default:
+    driver: bridge
